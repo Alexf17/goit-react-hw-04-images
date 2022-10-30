@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import { ImageGalleryItem } from '../ImageGalleryItem/ImageGalleryItem';
 import { ImageGalleryWrap } from './ImageGallery.styled';
-import PropTypes from 'prop-types';
+
 
 export const ImageGallery = ({ dataResponse }) => {
   return (

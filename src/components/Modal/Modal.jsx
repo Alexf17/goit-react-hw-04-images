@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import { ModalWindow, ModalOverlay } from './Modal.styled';
 import PropTypes from 'prop-types';
+import { ModalWindow, ModalOverlay } from './Modal.styled';
+
 
 export const Modal = ({ img, alt, onClick }) => {
   useEffect(() => {

@@ -1,11 +1,13 @@
+import { useState, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+
 import { fetch } from 'API/API';
 import { Searchbar } from 'components/Searchbar/Searchbar';
-import { useState, useEffect } from 'react';
 import { ImageGallery } from '../ImageGallery/ImageGallery';
 import { Button } from '../Button/Button';
 import { Loader } from '../Loader/Loader';
+
 import { Wrap } from './App.styled';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const App = () => {
@@ -21,13 +23,7 @@ export const App = () => {
     setCurrentPage(1);
   };
 
-  useEffect(() => {
-    if (!query) {
-      return;
-    }
-
-    getImage(query, currentPage);
-  }, [currentPage, query]);
+ 
 
   const getImage = async (query, page) => {
     try {
@@ -51,6 +47,14 @@ export const App = () => {
     setCurrentPage(prevState => prevState + 1);
   };
 
+   useEffect(() => {
+    if (!query) {
+      return;
+    }
+
+    getImage(query, currentPage);
+   }, [currentPage, query]);
+  
   return (
     <Wrap>
       <ToastContainer />

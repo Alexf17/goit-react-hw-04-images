@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import PropTypes from 'prop-types';
 import 'react-toastify/dist/ReactToastify.css';
 import {
   SearchbarHeader,
@@ -8,7 +9,7 @@ import {
   SearchFormInput,
   SearchFormButtonLabel,
 } from './Searchbar.styled';
-import PropTypes from 'prop-types';
+
 
 export const Searchbar = ({ onSubmit }) => {
   const [query, setQuery] = useState('');
