@@ -13,13 +13,13 @@ import 'react-toastify/dist/ReactToastify.css';
 export const App = () => {
   const [query, setQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const [respons, setRespons] = useState([]);
+  const [response, setResponse] = useState([]);
   const [total, setTotal] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = query => {
     setQuery(query);
-    setRespons([]);
+    setResponse([]);
     setCurrentPage(1);
   };
 
@@ -34,7 +34,7 @@ export const App = () => {
         return toast.error('🟡 Sorry , но по Вашему запросу нет картинок ');
       } else {
         setTotal(images.totalHits);
-        setRespons(prevState => [...prevState, ...images.hits]);
+        setResponse(prevState => [...prevState, ...images.hits]);
       }
     } catch (error) {
       console.log(error);
@@ -59,8 +59,8 @@ export const App = () => {
     <Wrap>
       <ToastContainer />
       <Searchbar onSubmit={onSubmit} />
-      <ImageGallery dataResponse={respons} />
-      {total > respons.length && <Button onLoadMore={onLoadMoreButton} />}
+      <ImageGallery dataResponsee={response} />
+      {total > response.length && <Button onLoadMore={onLoadMoreButton} />}
 
       {isLoading && <Loader />}
     </Wrap>

@@ -3,10 +3,10 @@ import { ImageGalleryItem } from '../ImageGalleryItem/ImageGalleryItem';
 import { ImageGalleryWrap } from './ImageGallery.styled';
 
 
-export const ImageGallery = ({ dataResponse }) => {
+export const ImageGallery = ({ dataResponsee }) => {
   return (
     <ImageGalleryWrap>
-      {dataResponse.map(data => (
+      {dataResponsee.map(data => (
         <ImageGalleryItem key={data.id} data={data} />
       ))}
     </ImageGalleryWrap>
@@ -14,7 +14,7 @@ export const ImageGallery = ({ dataResponse }) => {
 };
 
 ImageGallery.propTypes = {
-  dataResponse: PropTypes.arrayOf(
+  dataResponsee: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       data: PropTypes.objectOf(
